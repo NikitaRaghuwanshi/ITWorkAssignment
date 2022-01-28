@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Fuction Use</title>
+</head>
+<body>
+	<h2>JavaScript Strings</h2>
+	<h4 class="heading">String:</h4><p id="demo"></p><hr>
+	<h4 class="heading">Length:</h4><p id="demo1"></p></h4><hr>
+	<h4 class="heading">String Concate(+):</h4><p id="demo2"></p><hr>
+	<h4 class="heading">String  Slice:</h4><p id="demo3"></p><hr>
+	<h4 class="heading">Substring:</h4><p id="demo4"></p><hr>
+	<h4 class="heading">Substr:</h4><p id="demo5"></p><hr>
+	<h4 class="heading">Replace:</h4><p id="demo6">Hello</p><hr>
+	<h4 class="heading">Uppar Case:</h4><p id="demo7"></p><hr>
+	<h4 class="heading">Lower Case:</h4><p id="demo8"></p><hr>
+	<h4 class="heading">Concate:</h4><p id="demo9"></p><hr>
+	<h4 class="heading">Trim:</h4><p id="demo10"></p><hr>
+	<h4 class="heading">Padding Start:</h4><p id="demo11"></p><hr>
+	<h4 class="heading">Padding End:</h4><p id="demo12"></p><hr>
+
+	<script>
+	/*String */
+	let a = "Hellozz, Everyone";
+	let b = "I am 'JavaScript'";
+	document.getElementById("demo").innerHTML =
+	a + "<br>" + b + "<br>"; 
+	/*Length*/
+	document.getElementById("demo1").innerHTML=a.length;
+	
+	/*String Concate*/
+	document.getElementById("demo2").innerHTML=a+b;
+	
+	/*String  Slice*/
+	let str="ITWorks Infotech..";
+	document.getElementById("demo3").innerHTML=str.slice(2,10);
+	
+	/*Substring*/
+	let str1="ITWorks Infotech..";
+	document.getElementById("demo4").innerHTML=str1.substring(10,15);
+	
+	/*Substr*/
+	let str2="Full Stack Developer";
+	document.getElementById("demo5").innerHTML=str2.substr(5,5);
+	
+	/*Replace*/
+	let text = document.getElementById("demo6").innerHTML;
+	document.getElementById("demo6").innerHTML =
+	text.replace("Hello","Google");
+
+	/*Uppar*/
+	let up="upperstring";
+	document.getElementById("demo7").innerHTML=up.toUpperCase();
+
+	/*Lower*/
+	let low="LOWER STRING";
+	document.getElementById("demo8").innerHTML=low.toLowerCase();
+
+	/*Concate*/
+	let c=a.concat("/",b);
+	document.getElementById("demo9").innerHTML=c;
+
+	/*Trim*/
+	let t1= "   --Rajput--    ";
+	let t2=t1.trim();
+	document.getElementById("demo10").innerHTML=t2;
+
+	/*Padding*/
+	let p1 = "Nik";
+	document.getElementById("demo11").innerHTML = p1.padStart(5,'s');
+	document.getElementById("demo12").innerHTML = p1.padEnd(5,'s');
+
+	</script>
+
+</body>
+</html>

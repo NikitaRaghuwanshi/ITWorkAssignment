@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment-4(Using Java Script)</title>
+</head>
+<body bgcolor=" #ffccff">
+	<form>
+		<!-- Heading -->
+		<h2>Registration Form</h2>
+		<!-- Fieldset -->
+		<fieldset>
+		<!-- Legend -->
+			<legend>Form:</legend>
+		<!-- Text Value -->	
+		Full Name: <input type="text" name="Fname" id="name" value="Enter the Your Full Name:">
+		<p id="para"></p><hr>
+
+		<!-- Text Area -->
+		Text Area:
+		<textarea rows="4" cols="15" name="Area" id="area">Enter the Text Area:</textarea>
+		<p id="para1"></p><hr>
+
+		<!-- Dropdown -->
+		Profile:
+		<select id="drop">
+			<option value="Full Stack Developer">FSD</option>
+			<option value="Front End Developer">FED</option>
+			<option value="Back End Developer">BED</option>
+			<option value="Andriod Developer">AD</option>
+			<option value="IOS Developer">IOSD</option>
+		</select>
+		<button type="button" onclick="select()">select</button>
+		<p id="para2"></p><hr>
+
+		<!-- CheckBox -->
+		<h4>City:</h4>
+		Pune:<input type="checkbox" id="cb1" value="You,have select Pune..">
+		Mumbai:<input type="checkbox" id="cb2" value="You,have select Mumbai..">
+		<button type="button" onclick="checkbox()">Submit</button> <br>  
+		<p id="ch1"></p>
+		<p id="ch2"></p><hr>
+
+		<!-- Radio Button -->
+        Gender:
+            <input type="radio" id="gender1" name="gender" value="You have select male">Male
+            <input type="radio" id="gender2" name="gender" value="You have select female">Female
+            <button onclick="">submit</button>
+         <p id="gen1"></p> 
+         <p id="gen2"></p>  
+		</fieldset>
+	</form>
+
+	<script>																	
+		 /*document.write($name);*/
+		 console.log("Registration.."); /*Display in console*/
+
+		 /*Input Text*/
+		 var x = document.getElementById("name").value;
+		 document.getElementById("para").innerHTML=x;
+		 
+		 /*TextArea*/
+		 var y = document.getElementById("area").value;
+		 document.getElementById("para1").innerHTML=y;
+
+		 /*Dropdown*/
+		 function select(){
+		 var z= document.getElementById("drop").value;
+		 document.getElementById("para2").innerHTML=z;
+		}
+
+		 /*CheckBox*/
+		function checkbox() {  
+  			 var x1 = document.getElementById("cb1").value;
+  			 document.getElementById("ch1").innerHTML = x1;
+  			/* alert(x1);*/
+  			 var x2 = document.getElementById("cb2").value;
+  			 document.getElementById("ch2").innerHTML = x2;
+  			 // alert(x2);
+  		}  
+
+  		/*Radio Button*/
+  		 var radio = document.getElementById("gender1").value;
+		 document.getElementById("gen1").innerHTML=radio;
+
+		 var radio = document.getElementById("gender2").value;
+		 document.getElementById("gen2").innerHTML=radio;
+		
+	</script>
+</body>
+</html>
