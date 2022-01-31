@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Assignment-4(Using Java Script)</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body bgcolor=" #ffccff">
 	<form>
@@ -12,41 +13,53 @@
 		<!-- Legend -->
 			<legend>Form:</legend>
 		<!-- Text Value -->	
-		Full Name: <input type="text" name="Fname" id="name" value="Enter the Your Full Name:">
+		Full Name: <input type="text" name="Fname" id="name" value="" onchange="input()">
 		<p id="para"></p><hr>
 
 		<!-- Text Area -->
 		Text Area:
-		<textarea rows="4" cols="15" name="Area" id="area">Enter the Text Area:</textarea>
+		<textarea rows="4" cols="15" name="Area" id="area" onkeypress="textarea()"></textarea>
 		<p id="para1"></p><hr>
 
 		<!-- Dropdown -->
 		Profile:
-		<select id="drop">
+		<select id="drop" onchange="select()">
 			<option value="Full Stack Developer">FSD</option>
 			<option value="Front End Developer">FED</option>
 			<option value="Back End Developer">BED</option>
 			<option value="Andriod Developer">AD</option>
 			<option value="IOS Developer">IOSD</option>
 		</select>
-		<button type="button" onclick="select()">select</button>
+		<!-- <button type="button" id="btn">select</button> -->
 		<p id="para2"></p><hr>
 
 		<!-- CheckBox -->
 		<h4>City:</h4>
 		Pune:<input type="checkbox" id="cb1" value="You,have select Pune..">
 		Mumbai:<input type="checkbox" id="cb2" value="You,have select Mumbai..">
-		<button type="button" onclick="checkbox()">Submit</button> <br>  
-		<p id="ch1"></p>
+		<!-- <button type="button" onclick="checkbox()">Submit</button> <br>   -->
+		<p id="ch1" style="display:none">Checkbox is CHECKED!</p>
 		<p id="ch2"></p><hr>
 
 		<!-- Radio Button -->
         Gender:
-            <input type="radio" id="gender1" name="gender" value="You have select male">Male
-            <input type="radio" id="gender2" name="gender" value="You have select female">Female
-            <button onclick="">submit</button>
+            <input type="radio" id="gender1" name="gender1" onchange="gender(this)" value="You have select male">Male
+            <input type="radio" id="gender2" name="gender1" onchange="gender(this)" value="You have select female">Female
+            <!-- <button onclick="">submit</button> -->
          <p id="gen1"></p> 
          <p id="gen2"></p>  
+
+         <!-- Multiple CheckBox -->
+         <h4> Select yours documents.</h4>  
+			  
+		  Adharcard:<input type="checkbox" name="doc" value="Adharcard">   
+		  Passport:<input type="checkbox" name="doc" value="Passport">    
+		  Certificates:<input type="checkbox" name="doc" value="Certificates">
+		  Marksheet: <input type="checkbox" name="doc" value="Marksheet"> 
+
+		  <button type="button" id="btn">Submit</button> 
+			
+
 		</fieldset>
 	</form>
 
@@ -55,12 +68,18 @@
 		 console.log("Registration.."); /*Display in console*/
 
 		 /*Input Text*/
-		 var x = document.getElementById("name").value;
-		 document.getElementById("para").innerHTML=x;
+		 function input()
+		 {
+		 	var x = document.getElementById("name").value;
+		 	document.getElementById("para").innerHTML=x;
+		 }
 		 
 		 /*TextArea*/
+		 function textarea()
+		 {
 		 var y = document.getElementById("area").value;
 		 document.getElementById("para1").innerHTML=y;
+		}
 
 		 /*Dropdown*/
 		 function select(){
@@ -68,23 +87,49 @@
 		 document.getElementById("para2").innerHTML=z;
 		}
 
+		/*Select Onclick*/
+		$("#btn").click(function(){
+			console.log("On click event");
+		});
+
+		/*On Change*/
+		/*$("#drop").change(function(){
+			document.getElementById($(this).val());
+		});*/
+
 		 /*CheckBox*/
 		function checkbox() {  
-  			 var x1 = document.getElementById("cb1").value;
+  			 /*var x1 = document.getElementById("cb1").value;
   			 document.getElementById("ch1").innerHTML = x1;
-  			/* alert(x1);*/
+  			
   			 var x2 = document.getElementById("cb2").value;
-  			 document.getElementById("ch2").innerHTML = x2;
-  			 // alert(x2);
+  			 document.getElementById("ch2").innerHTML = x2;*/
+
+  			 var checkBox = document.getElementById("cb1");
+			  var ch1 = document.getElementById("ch1");
+			  if (checkBox.checked == true){
+			    ch1.style.display = "block";
+			  } else {
+			     ch1.style.display = "none";
+			  }
   		}  
 
   		/*Radio Button*/
-  		 var radio = document.getElementById("gender1").value;
-		 document.getElementById("gen1").innerHTML=radio;
-
-		 var radio = document.getElementById("gender2").value;
-		 document.getElementById("gen2").innerHTML=radio;
+		 function gender(src)
+		 {
+		 	alert(src.value);
+		 }
 		
+		 /*Multiple CheckBox*/
+		 document.getElementById('btn').onclick = function() {  
+		  var markedCheckbox = document.getElementsByName('doc');  
+		  for (var checkbox of markedCheckbox) {  
+		    if (checkbox.checked)  
+		      document.body.append(checkbox.value + '  ');  
+		  	/*	alert(checkbox.value+'');*/
+		  }  
+		}  
+
 	</script>
 </body>
 </html>

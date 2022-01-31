@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays in Java Scripts</title>
+</head>
+<body>
+	<!-- Simple Array -->
+	<h4>Simple Array & Access the Full Array..</h4><p id="demo"></p><hr>
+	<h4>Using the JavaScript Keyword new & Accessing Array Elements..</h4><p id="demo1"></p><hr>
+	<h4>Changing an Array Element..</h4><p id="demo2"></p><hr>
+	<h4>Arrays are Objects..</h4><p id="demo3"></p><hr>
+	<h4>Key Value Objects..</h4><p id="demo4"></p><hr>
+	<h4>Length of array..</h4><p id="demo5"></p><hr>
+	<h4>Accessing the Last Array Element..</h4><p id="demo6"></p><hr>
+	<h4>Looping Array Elements..</h4><p id="demo7"></p><hr>
+	<h4>Array.forEach() calls a function for each array element...</h4><p id="demo8"></p><hr>
+	<h4>Adding Array Elements using the push() method...</h4><p id="demo9"></p><hr>
+	<h4>Adding Array Elements using the after push() method...</h4><p id="demo10"></p><hr>
+	<h4>Associative Arrays...</h4><p id="demo11"></p><hr>
+	<h4>Array Methods is toString...</h4><p id="demo12"></p><hr>
+	<h4>Array Methods is Join...</h4><p id="demo13"></p><hr>
+	<h4>Array Pop()...</h4><p id="demo14"></p><hr>
+	<h4>Array Push()...</h4><p id="demo15"></p><hr>
+	<h4>Array shift()...</h4><p id="demo16"></p><hr>
+	<h4>Array Unshift()...</h4><p id="demo17"></p><hr>
+	<h4>Array Length()...</h4><p id="demo18"></p><hr>
+	<h4> Merging (Concatenating) Arrays()...</h4><p id="demo19"></p><hr>
+	<h4> Array splice()...</h4><p id="demo20"></p>
+	<p id="demo21"></p>
+	<p id="demo22"></p><hr>
+	<h4>Array slice()...</h4><p id="demo23">
+		<p id="demo24">
+			<p id="demo25">
+	</p><hr>
+
+	<!-- Java Script Code -->
+	<script>
+		 /*Simple Array & Access the Full Array*/
+		const color=["Red","Blue","Pink"];
+		document.getElementById("demo").innerHTML=color;
+
+		/*Create an array, and then provide the elements*/
+		const color1=[];
+		color1[0]="Purple";
+		color1[1]="Black";
+		color1[2]="white";
+		console.log(color);
+
+		/*Using the JavaScript Keyword new & Accessing Array Elements*/
+		const arr=new Array('A','B','D');
+		document.getElementById("demo1").innerHTML=arr[2];
+
+		/*Changing an Array Element*/
+		arr[2]="Niks";
+		document.getElementById("demo2").innerHTML=arr;
+
+		/*Arrays are Objects*/
+		const details=["Nikita","Raghuwanshi",12];
+		document.getElementById("demo3").innerHTML=details;
+
+		/*Key value Objects*/
+		const person={fname:"Vaishnavi",lname:"Rajput", age:20};
+		document.getElementById("demo4").innerHTML=person.age;
+
+		/*Length of array*/
+		document.getElementById("demo5").innerHTML=details.length;
+
+		/*Accessing the Last Array Element*/
+		document.getElementById("demo6").innerHTML=details[details.length-2];
+
+		/*Looping Array Elements*/
+		let text;
+		let per=details.length;
+		for(let i=0; i<per;i++){
+			text+="<li>" + details[i] +"</li>";
+		}
+		document.getElementById("demo7").innerHTML=text;
+
+		/*Array.forEach() calls a function for each array element.*/
+		details.forEach(myfunction);
+		text+="</ul>";
+		document.getElementById("demo8").innerHTML=text;
+
+		function myfunction(value){
+			text+= "<li>" + value +"</li>";
+		}
+
+		/*Adding Array Elements using the push() method*/
+		const fruits = ["Banana", "Orange", "Apple"];
+		document.getElementById("demo9").innerHTML = fruits;
+
+		function myFunction() {
+ 		fruits.push("Lemon");
+  		document.getElementById("demo10").innerHTML = fruits;
+		}
+		console.log(myFunction());//undefined
+
+		/*Associative Arrays*/
+		const city = [];
+		city[0] = "Vaishnavi";
+		city[1] = "Rajput";
+		city[2] = 46; 
+		document.getElementById("demo11").innerHTML=
+		city[0] +" "+city[1]+":"+" " + city.length;
+
+		/*toString Array Methods*/
+		var colors=["Blue","Black","Red","White","Pink"];
+		document.getElementById("demo12").innerHTML=colors.toString();
+
+		/*Join() Array Methods*/
+		document.getElementById("demo13").innerHTML=colors.join("@");
+
+		/*Array pop()*/
+		colors.pop();
+		document.getElementById("demo14").innerHTML=colors;
+
+		/*Array Push()*/
+		colors.push("Wine Color");
+		document.getElementById("demo15").innerHTML=colors;
+
+		/*Array shift()*/
+		colors.shift();
+		document.getElementById("demo16").innerHTML=colors;
+
+		/*Array unshift()*/
+		colors.unshift("Silver color");
+		document.getElementById("demo17").innerHTML=colors;
+
+		/*Array length*/
+		colors[colors.length]="Green";
+		document.getElementById("demo18").innerHTML=colors;
+
+		/*Merging (Concatenating) Arrays*/
+		const marg=details.concat(colors);
+
+		document.getElementById("demo19").innerHTML=marg;
+
+		/* Array splice()*/
+		var mobile=["Apple","Sony","MI","Realme"];
+		document.getElementById("demo20").innerHTML="<mark>Original Array:</mark>"+mobile;
+		let mob=mobile.splice(2,1,"One Plus","Samsung");
+		document.getElementById("demo21").innerHTML="<mark>New Array:</mark>"+mobile;
+		document.getElementById("demo22").innerHTML="<mark>Remove Array:</mark>"+mob;
+
+		/*Array slice()*/
+		document.getElementById("demo23").innerHTML="<mark>Original Elements:</mark>"+mobile;
+		var slice1=mobile.slice(3);
+		document.getElementById("demo24").innerHTML="<mark>Starting element delete:</mark>"+slice1;
+		var slice2=mobile.slice(2,3);
+		document.getElementById("demo25").innerHTML="<mark>Between Elements Delete:</mark>"+slice2;
+		
+	</script>
+</body>
+</html>

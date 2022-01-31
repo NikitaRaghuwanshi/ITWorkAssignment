@@ -18,6 +18,9 @@
 	<h4 class="heading">Trim:</h4><p id="demo10"></p><hr>
 	<h4 class="heading">Padding Start:</h4><p id="demo11"></p><hr>
 	<h4 class="heading">Padding End:</h4><p id="demo12"></p><hr>
+	<h4 class="heading">ChartAt:</h4><p id="demo13"></p><hr>
+	<h4 class="heading">CharCodeAt():</h4><p id="demo14"></p><hr>
+
 
 	<script>
 	/*String */
@@ -69,6 +72,13 @@
 	let p1 = "Nik";
 	document.getElementById("demo11").innerHTML = p1.padStart(5,'s');
 	document.getElementById("demo12").innerHTML = p1.padEnd(5,'s');
+
+	/*ChartAt*/
+	let char="ITWorks Infotech";
+	document.getElementById("demo13").innerHTML = char.charAt(5);
+
+	/*charCodeAt()*/
+	document.getElementById("demo14").innerHTML = char.charCodeAt(5);
 
 	</script>
 
