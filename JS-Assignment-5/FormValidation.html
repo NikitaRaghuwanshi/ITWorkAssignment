@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form Validation.</title>
+	<style>
+		body{
+			margin-top: 50px; 
+			text-align: center;
+			background-color:#d966ff;
+		}
+		.group{
+			margin: 10px;
+			padding: 18px;
+		}
+		.content {
+		  max-width: 500px;
+		  margin: auto;
+		  background: rgba(0,0,0,0.3);
+		  padding: 10px;
+		}
+	</style>
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+<body>
+	
+		<h2>Registration Validation Form</h2>
+		<form id="formid" name="formid">
+			<div class="content">
+			<div class="group">
+			<label for="fname">First Name:</label>
+			<input type="text" id="fname" name="fname" placeholder="Enter Your First Name" required="">
+			</div>
+
+			<div class="group">
+			<label for="sname">Last Name:</label>
+			<input type="text" id="sname" name="sname" placeholder="Enter Your Surname" required="">
+			</div>
+
+			<div class="group">
+			<label for="mobile">Mobile Number:</label>
+			<input type="Number" id="mobile" name="mobile" placeholder="Enter Your Mobile Number" required="">
+			</div>
+
+			<div class="group">
+			<label for="email">Email ID:</label>
+			<input type="Email" id="email" name="email" placeholder="Enter Your Emial ID" required="">
+			</div>
+
+			<div class="group">
+			<label for="pass">Password:</label>
+			<input type="Password" id="pass" name="pass" placeholder="Enter Your Password" required="">
+			</div>
+
+			<div class="group">
+			<label for="city">City:</label>
+			<input type="text" id="city" name="city" placeholder="Enter Your City" required>
+			</div>
+
+			<div class="group">
+			<label for="pin">Pincode:</label>
+			<input type="Number" id="pin" name="pin" placeholder="Enter Your Pincode" required="">
+			</div>
+
+			<div class="group">
+			<input type="submit" name="submit">
+			</div>
+			</div>
+		</form>
+	
+	<script>
+		$(document).ready(function() {
+      $("#formid").validate({
+		rules: {
+			email: {
+				email: function(element){
+					 return isNaN($("#email").val());
+					}
+			},
+			mobile:{
+		  		minlength:10,
+		  		maxlength:10,
+		  		},	
+		  	pass:{
+		  		minlength:8,
+		  	},	
+		  	pin:{
+		  		minlength:6,
+		  		maxlength:6,
+		  	},			
+			},
+
+		messages: {
+			email: {
+				email: "Please enter a valid email address"
+			},
+			mobile: "Please enter a 10 digit Numbers."
+			},
+
+	});
+});
+	
+</script>
+</body>
+</html>

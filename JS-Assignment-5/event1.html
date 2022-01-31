@@ -1,0 +1,51 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("h2").click(function(){
+    console.log("hello click");
+  });
+
+
+  $("#p1").mouseenter(function(){
+    console.log("You entered!");
+  });
+
+
+  $("#p2").mouseleave(function(){
+    console.log("Bye! You now leave!");
+  });
+
+
+  $("#p3").mousedown(function(){
+    console.log("Mouse down over!");
+  });
+
+
+  $("input").focus(function(){
+    $(this).css("background-color", "yellow");
+  });
+  $("input").blur(function(){
+    $(this).css("background-color", "green");
+  });
+  $("input").change(function(){
+    console.log("The text has been changed.");
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>Click on me</h2>
+<p id="p1">MouseEnterEvent</p>
+<p id="p2">Mouse Leave Event</p>
+<p id="p3">Mouse Down Event</p>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
+
+
+
+
+</body>
+</html>
