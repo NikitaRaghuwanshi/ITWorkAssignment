@@ -2,20 +2,88 @@
 <html>
 <head>
 	<title>All JS Events Perfroms</title>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style>
+		.box,.box1,.box4{
+			border:2px solid red;
+		}
+		#para{
+			font-size: 25px;
+		}
+	</style>
 </head>
 <body>
-	<p>Hello</p>
+	<h3>Single Clicked..</h3>
+	<div class="box">
+		<img src="Img/a.jpg">
+	</div>
+	<h3>Double Clicked..</h3>
+	<div class="box1">
+		<button type="button" id="btn">Double Click</button>
+	</div>
+	<h3>Context Menu..</h3>
+	<div class="box3">
+		<p id="para">Please, Right Clicked..</p>
+	</div>
+	<h4><p id="para1">Mouse Down..</p></h4>
+
+	<h4><p id="para2">Mouse Up..</p></h4>
+
+	<div class="box4">
+		<p>Image</p>
+	</div>
+
+	<hr>
+    Enter your Name!!! <input type="text" name="Thought" id="in2">
+    <hr>
+    Address!!! <input type="text" name="Thought" id="in1"> 
+    <hr>
+    
 
 	 <script>
 		$(document).ready(function(){
-			$("p").click(function(){
-				alert("You have to performed Click Events.");
+			$('.box').click(function(){
+				$('.box').css('background-image','url("Img/b.jpg")');
 			});
+
+			$('#btn').dblclick(function(){
+				$('.box1').css('background-color','green');
+			});
+
+			$('#para').contextmenu(function(){
+				$('#para').css('color','green');
+			});
+
+			$('#para').mouseenter(function(){
+				$('.box3').css('background-color','#b366ff');
+			});
+
+			$('#para').mouseleave(function(){
+				$('.box3').css('background-color','#b3d9ff');
+			});
+
+			$("#para1").mousedown(function(){
+       		 alert("Mouse down..");
+      		});
+
+      		$("#para2").mouseup(function(){
+       		 alert("Mouse Up..");
+      		});
+
+      		$(".box4").hover(function(){
+       		 	$(".box4").css('background-image','url("Img/a.jpg")');
+     		});
+
+      		$("input").focus(function(){
+    		$(this).css("background-color", "red");
+     		});
+
+     		$("input").blur(function(){
+      		$("#in1").css("background-color", "yellow");
+      		});
+
 		});	
-
-		
-
 	 </script>
 </body>
 </html>

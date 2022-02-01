@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form Validation.</title>
+	<style>
+		body{
+			margin-top: 50px; 
+			text-align: center;
+			width: 100%;
+			background-color: #ffffb3;
+			overflow-x: hidden;
+		}
+		.group{
+			margin: 10px;
+			padding: 10px;
+		}
+		.content {
+		  max-width: 500px;
+		  margin: auto;
+		  background: rgba(0,0,0,0.3);
+		  padding: 10px;
+		}
+		.error{
+			display: block;
+			color: red;
+		}
+	</style>
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	</head>
+<body>
+	
+		<h2>Registration Validation Form</h2>
+		<form id="formid" name="formid">
+			<div class="content">
+			<div class="group">
+			<label for="fname">First Name:</label>
+			<input type="text" id="fname" name="fname" placeholder="Enter Your First Name">
+			<span id="fname_err" class="error"></span>
+			</div>
+
+			<div class="group">
+			<label for="sname">Last Name:</label>
+			<input type="text" id="sname" name="sname" placeholder="Enter Your Surname">
+			<span id="sname_err" class="error"></span>
+			</div>
+
+			<div class="group">
+			<label for="mobile">Mobile Number:</label>
+			<input type="Number" id="mobile" name="mobile" placeholder="Enter Your Mobile Number">
+			<span id="mobile_err" class="error"></span>
+			</div>
+
+			<div class="group">
+			<label for="email">Email ID:</label>
+			<input type="Email" id="email" name="email" placeholder="Enter Your Emial ID">
+			<span id="email_err" class="error"></span>
+			</div>
+
+			<div class="group">
+			<label for="pass">Password:</label>
+			<input type="Password" id="pass" name="pass" placeholder="Enter Your Password">
+			<span id="Pass_err" class="error"></span>
+			</div>
+
+			<div class="group">
+			<label for="city">City:</label>
+			<input type="text" id="city" name="city" placeholder="Enter Your City">	
+			<span id="city_err" class="error"></span>
+			</div>
+
+			<div class="group">
+			<label for="pin">Pincode:</label>
+			<input type="Number" id="pin" name="pin" placeholder="Enter Your Pincode">
+			<span id="pin_err" class="error"></span>
+			</div>
+
+			<div class="group">
+			<input type="submit" name="submit">
+			</div>
+			</div>
+		</form>
+	
+	<script>
+		$("#formid").submit(function(){
+		var fname = $("#fname").val();
+		var sname = $("#sname").val();
+	    var email=$("#email").val();
+	    var mobile=$("#mobile").val().toString();
+        var pass=$("#pass").val().toString();
+        var pin=$("#pin").val().toString();
+     
+	    $("#fname_err").text('');
+	    $("#sname_err").text('');
+	    $("#email_err").text('');
+	    $("#mobile_err").text('');
+	    $("#pass_err").text('');
+	    $("#pin_err").text('');
+
+        if(fname == "")
+        {
+        	$("#fname_err").text("This Field is not valid");
+        	return false;
+        }
+
+        if(sname == "")
+        {
+        	$("#sname_err").text("This Field is not valid");
+        	return false;
+        }
+        
+
+        if(mobile == "")
+        {
+        	$("#mobile_err").text("This Field is not valid");
+        	return false;
+        }
+        else 
+        {
+        	if(mobile.length===10)
+        	{
+        		
+        	}
+        	else
+        	{
+        		$("#mobile_err").text("Please, Enter a 10 digit Mobile");
+        		return false;
+        	}
+        }
+
+        if(email == "")
+        {
+        	$("#email_err").text("This Field is not valid");
+            return false;
+        }
+
+        if(pass == "")
+        {
+        	$("#pass_err").text("This Field is not valid");
+        	return false;
+        }
+        else
+        {
+        	if(pass.length>=8)
+        	{
+        		
+        	}
+        	else
+        	{
+        		$("#pass_err").text("Please, Enter minimum 8 digits Password.");
+        	    return false;
+        	}
+
+        }
+
+
+       
+       
+        if(pin == "")
+        {
+        	$("#pin_err").text("This Field is not Valid");
+        	return false;
+        }
+        else
+        {
+        	if(pin.length == 6)
+        	{
+
+        	}
+        	else
+        	{
+        		$("#pin_err").text("Please, Enter a 6 digits Pincode");
+        	    return false;
+        	}
+
+        }
+
+	});
+
+	
+    </script>
+</body>
+</html>
