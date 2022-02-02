@@ -56,7 +56,7 @@
 			<div class="group">
 			<label for="email">Email ID:</label>
 			<input type="Email" id="email" name="email" placeholder="Enter Your Emial ID">
-			<span id="email_err" class="error"></span>
+			<span id="emailID" class="error"></span>
 			</div>
 
 			<div class="group">
@@ -84,6 +84,26 @@
 		</form>
 	
 	<script>
+
+		/*$(document).ready(function(){
+			$('#email').keyup({
+				if(emailvalid())
+					$('$emailID').html("Valid");
+				
+				else
+					$('$emailID').html("Invalid");
+				
+			});
+		});
+
+		function emailvalid(){
+			var E_mail=$('#email').val();
+			var reg=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if(reg.test(E_mail))
+			return true;
+			else
+			return false;	
+		}*/
 		$("#formid").submit(function(){
 		var fname = $("#fname").val();
 		var sname = $("#sname").val();
@@ -119,7 +139,8 @@
         }
         else 
         {
-        	if(mobile.length===10)
+        	var reg=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        	if(mobile.length===10 && reg.test('#mobile'))
         	{
         		
         	}
