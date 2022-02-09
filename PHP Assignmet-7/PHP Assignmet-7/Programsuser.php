@@ -13,6 +13,12 @@
 </head>
 <body>
 	<form action="user.php" method="get">
+		<h2>1] Write a program to find no of days between two dates in Php?</h2>
+		O/P:
+		<input type="date" name="out1">
+		<input type="date" name="out2">
+		<input type="submit" name="submit">
+
 		<h2>3] What will this code output ?</h2>
 		O/P:
 		<input type="Number" name="output">
