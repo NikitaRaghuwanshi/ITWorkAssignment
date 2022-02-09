@@ -1,10 +1,45 @@
 
 <style>
+	*{
+			background-image: url("img/code3.jpg");
+		}
 	h3{
 		color: green;
 	}
 </style>
 <?php
+	// 1] Write a program to find no of days between two dates in Php?
+	
+	echo "<h3>1] Write a program to find no of days between two dates in Php?
+		</h3>";
+		$date1 = "2016-07-31";
+		$date2 = "2017-08-05";
+
+		function dateDiff($date1, $date2)
+		{
+		    $date1_ts = strtotime($date1);
+		    $date2_ts = strtotime($date2);
+		    $diff = $date2_ts - $date1_ts;
+		    return round($diff / 86400);
+		}
+
+		$dateDiff = dateDiff($date1, $date2);
+
+		printf("Difference between in two dates : " . $dateDiff . " Days ");
+		print "</br>";
+
+	/*2] Write a program in PHP to find the occurrence of a word in a string*/
+	echo "<h3>2] Write a program in PHP to find the occurrence of a word in a string?
+		</h3>";
+
+		// $p1 = "Nikita";
+		// $p2 = "Raghuwanshi";
+		  
+		print_r(str_word_count("Nikita is R"));
+		
+		  
+		
+
 	/*3] What will this code output
 	$x = true and false;
 	var_dump($x); */
@@ -122,7 +157,7 @@
 			$smax = $num[$i];
 		}
 	}
-	echo $smax;
+	echo "Second highest number in an array : $smax";
 
 
 ?>
