@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body{
+      margin-top: 5%;
+      background-image: url("img/code3.jpg");
+    }
+    div{
+      padding: 10px;
+    }
+    #group{
+      border-radius: 20px;
+      background-color: #4d4d4d;
+      padding: 20px;
+      text-align: center;
+      width: 30%;
+      margin: auto;
+    }
+    .input_one{
+      width: 47%;
+    }
+    .input_all{
+      width: 100%
+    }
+    .error{
+      color: red;
+      display: block;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+<body>
+    <form id="formid" >
+      <div id="group">
+        <h2 style="color: white">Registr New Account</h2>
+        <div><input type="text" name="first_name" placeholder="Name" class="input_one">
+        <input type="text" name="last_name" placeholder="Last Name" class="input_one"></div>
+        <div><input type="email" name="email" id="email" placeholder="Email ID" class="input_all"></div>
+        <div><input type="Number" id="mobile" name="mobile" placeholder="Phone Number" class="input_all"></div>
+        <div><input type="text" name="user" placeholder="Username" class="input_all"></div>
+        <div><input type="password" id="pass" name="pass" placeholder="password" class="input_all"></div>
+        <div><input type="text" name="city" placeholder="City" class="input_all"></div>
+        <input type="submit" name="submit" style="background-color: #00cc44">
+    </form>
+    <script>
+    $(document).ready(function() {
+      $("#formid").validate({
+    rules: {
+        first_name:"required",
+        last_name:"required",
+        pass:"required",
+        city:"required",
+        user:"required",
+      email: {
+        required:true,
+       /* email: function(element){
+           return isNaN($("#email").val());
+          }*/
+      },
+      mobile:{
+        required:true,
+        digits:true,
+        minlength:10,
+        maxlength:10,
+          },  
+        pass:{
+          required:true,
+          minlength:8,
+        },      
+      },
+
+    messages: {
+      first_name: "Enter Name",
+      last_name: "Enter Last Name",
+      email: "Enter a valid email address",
+      mobile: "Enter a 10 digit Numbers.", 
+      user:"Enter Username",
+      pass:"Enter password",
+      city:"Enter City"
+      },
+  });
+});
+  
+</script>
+</body>
+</html>
