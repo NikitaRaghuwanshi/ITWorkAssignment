@@ -1,0 +1,15 @@
+body{
+	overflow-x: hidden;
+}
+h2{
+  color: #4da6ff;
+  text-shadow: 2px 2px 4px #000000;
+}
+img{
+	
+	float: right;
+	display: block;
+}
+.col-sm-9{
+	margin-top: 8px;
+}
