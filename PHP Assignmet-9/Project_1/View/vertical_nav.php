@@ -1,65 +1,107 @@
+<?php
+  session_start();
+
+  if($_SESSION["status"]!= true){
+    header("Location: login.php");
+  }
+?>
+
 <!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="nav.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-		<div class="row content"> <!-- divided into rows and column 3 -->
-     	<div class="col-sm-3">
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <!-- <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyUu9-_IwfdI7XhrzeAcucshveYsyDjKDiQ&usqp=CAU"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .sidenav{
+        height: 125vh;
+        background-color: rgba(0,0,0,0.1);
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar for mobile -->
+    <nav class="navbar navbar-inverse visible-xs">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Visual Studio</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            
+        <li><a href="statics.php"><i class='bx bx-home-alt icon'></i>
+         <span class="text nav-text">Home</span></a></li>
+       
+       <li><a href="user.php"><i class='bx bx-group icon' ></i>
+         <span class="text nav-text">User</span></a></li>
+       
+       <li><a href="my_account.php"><i class='bx bx-group icon'></i>
+         <span class="text nav-text">My Account</span></a></li>
 
-     	<!-- Toggal part of Vertical nav bar -->
-     	<nav class="navbar navbar-expand-lg navbar-light bg-light">	
-     	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	      </button>
-	      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">	
+         <li><a href="insert_record.php"><i class='bx bx-group icon'></i>
+         <span class="text nav-text">Insert Record</span></a></li> 
 
-	      	<!-- Vertical Part of navibar -->
-			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"  		aria-orientation="vertical">
-		      <h2>&nbsp;Visual Studio<img src="img/vs1.png" width="20%"></h2><br>
-			  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-fw fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
-			  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;Users</a>
-			  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class='fa fa-address-book-o'></i>&nbsp;&nbsp;&nbsp;&nbsp;My Account</a>
-			  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class='fa fa-sign-out'></i>&nbsp;&nbsp;&nbsp;&nbsp;Logout</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-			  <a href="#" style="text-decoration: none;"><i style="color: black">&nbsp;&nbsp; visualstudio@gmail.com</i></a>
-			</div>
+         <li><a href="user_details.php"><i class='bx bx-group icon'></i>
+         <span class="text nav-text">User Details Record</span></a></li>  
+       
+       <li><a href="logout.php"><i class='bx bx-menu icon' ></i>
+         <span class="text nav-text">Logout</span></a></li>
 
-			<div class="tab-content" id="v-pills-tabContent">
-			  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"></div>
-			  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"></div>
-			  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"></div>
-			  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"></div>
-			</div>
-		</div>
-		</nav>
-		</div>
-		
-		<div class="col-sm-9">
-			<div class="container-fluid">
-				<div class="card bg-light">
-					<div class="card-body">
-						<div class="row" >
-   						<div class="col-sm-9">
-						<h5>Dashboard</h5>
-						</div>
-						<div class="col-sm-3">
-    					<!-- <div class="col-sm-6"> -->
-    						<h5 style="float: right;">Admin</h5>
-    					<!-- </div> -->
-    					</div>
-						</div>
-					</div>
-				</div>
-				<!-- php include "user.php"; ?> -->
-				<!-- php include "my_account.php";?> -->
-			</div>
-		</div>
+        </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- nav bar for laptop -->
+    <div class="container-fluid">
+     <div class="row content">
+     <div class="col-sm-3 sidenav hidden-xs">
+       <h2>&nbsp;Visual Studio<img src="img/vs1.png" width="20%"></h2><br>
+       <ul class="nav nav-pills nav-stacked">
+      
+       <li><a href="statics.php"><i class='bx bx-home-alt icon'></i>
+         <span class="text nav-text">Home</span></a></li>
+       
+       <li><a href="user.php"><i class='bx bx-group icon' ></i>
+         <span class="text nav-text">User</span></a></li>
+       
+       <li><a href="my_account.php"><i class='bx bx-group icon'></i>
+         <span class="text nav-text">My Account</span></a></li>
 
-	</div>
-</body>
-</html>
+        <li><a href="insert_record.php"><i class='bx bx-group icon'></i>
+         <span class="text nav-text">Insert Record</span></a></li> 
+
+          <li><a href="user_details.php"><i class='bx bx-group icon'></i>
+         <span class="text nav-text">User Details Record</span></a></li> 
+
+          <li><a href="join_table.php"><i class='bx bx-group icon'></i>
+         <span class="text nav-text">Join Two Tables</span></a></li>  
+       
+       <li><a href="logout.php"><i class='bx bx-menu icon' ></i>
+         <span class="text nav-text">Logout</span></a></li>
+       </ul>
+                                        
+ </div><br>
+
+<div class="col-sm-9">
+ <div class="well">
+  <div class="row" >
+   <div class="col-sm-9">
+    <h3 style="margin-top: 10px;">Dashboard</h3>
+   </div>
+   </div>
+ </div>
+  </div>
+<!-- </body>
+</html> -->

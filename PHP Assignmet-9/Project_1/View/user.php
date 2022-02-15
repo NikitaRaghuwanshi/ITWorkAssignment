@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Table</title>
-	<style>
-		.col-sm{
-			margin-top:5%;
-		}
-	</style>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+<?php include "vertical_nav.php";?>
+
 	<!-- <div class="container-fluid"> -->
 	<!-- <div class="row"> -->
 	<!-- <div class="col-sm-3"></div>	 -->
-	<div class="col-sm auto">	
+	<div class="col-sm-9">	
    <table class="table table-bordered table-hover">
     <thead>
     <tr class="active">
-    <th>No</th>
+    <th>ID</th>
     <th>FULL NAME</th>
     <th>INSURANCE AGENCY NAME</th>
     <th>EMAIL</th>
@@ -28,51 +16,35 @@
   </tr>
 </thead>
 <tbody>
-  <tr>
-   <td>1</td>
-   <td>Fail Charge</td>
-   <td>Fail Charge</td>
-   <td>failcgarge@yopmail.com</td>
-   <td>12-08-2021 12:57:29</td>
-   <td><button class="btn btn-success">Update</button>
-   	<button class="btn btn-danger">Delete</button></td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>Team Licence</td>
-   <td>Team Licence</td>
-   <td>teamlic@yopmail.com</td>
-   <td>12-06-2021 12:56:57</td>
-   <td><button class="btn btn-success">Update</button>
-   	<button class="btn btn-danger">Delete</button></td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>Fail Charge</td>
-   <td>Fail Charge</td>
-   <td>failcgarge@yopmail.com</td>
-   <td>12-08-2021 12:57:29</td>
-   <td><button class="btn btn-success">Update</button>
-   <button class="btn btn-danger">Delete</button></td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>Team Licence</td>
-   <td>Team Licence</td>
-   <td>teamlic@yopmail.com</td>
-   <td>12-06-2021 12:56:57</td>
-   <td><button class="btn btn-success">Update</button>
-   <button class="btn btn-danger">Delete</button></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>Fail Charge</td>
-   <td>Fail Charge</td>
-   <td>failcgarge@yopmail.com</td>
-   <td>12-08-2021 12:57:29</td>
-   <td><button class="btn btn-success">Update</button>
-   	<button class="btn btn-danger">Delete</button></td>
-  </tr>
+
+<?php 
+  include '../Model/db_connection.php';
+
+  $query="SELECT * FROM company";
+  $result=$con->query($query);
+  if($result->num_rows>0){
+    while($data=$result->fetch_assoc()){?>
+    <tr>
+      <td><?php echo $data['company_id']; ?></td>
+      <td><?php echo $data['company_name']; ?></td>
+      <td><?php echo $data['company_agency']; ?></td>
+      <td><?php echo $data['company_email']; ?></td>
+      <td><?php echo $data['company_created']; ?></td>
+      <td>
+        <a href="../Model/update_form.php?id=<?php echo $data['company_id'];?>">
+          <button class="btn btn-success">Update</button>
+        </a>
+
+        <a href="../Model/delete_form.php?id=<?php echo $data['company_id'];?>">
+          <button class="btn btn-danger">Delete</button>
+        </a>
+
+      </td>
+    </tr>
+ <?php }
+}
+?>
+
 </tbody>
   </table>
 <!-- </div> -->
