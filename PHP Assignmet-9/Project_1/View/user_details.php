@@ -1,12 +1,14 @@
 <?php include "vertical_nav.php";?>
 
-	<!-- <div class="container-fluid"> -->
-	<!-- <div class="row"> -->
-	<!-- <div class="col-sm-3"></div>	 -->
+<style>
+  .well{
+      background-color: rgba(0,0,0,0.4);
+    }
+</style>
 	<div class="col-sm-9">	
    <table class="table table-bordered table-hover">
     <thead>
-    <tr class="active">
+    <tr class="info">
     <th>USER ID</th>
     <th>USER CITY</th>
     <th>USER STATE</th>
@@ -35,9 +37,7 @@
 ?>
 
 </tbody>
-  </table>
-<!-- </div> -->
-<!-- </div> -->
+</table>
 </div>
 </body>
 </html>

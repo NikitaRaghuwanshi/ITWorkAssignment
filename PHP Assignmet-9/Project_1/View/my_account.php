@@ -2,17 +2,22 @@
 include "../Model/db_connection.php";
 include "vertical_nav.php";
 ?>
-
+<style>
+  .well{
+      background-color: rgba(0,0,0,0.4);
+    }
+</style>
   <div class="col-sm-9">  
    <table class="table table-bordered table-hover">
     <thead>
-    <tr class="active">
+    <tr class="info">
     <th>ID</th>
     <th>FULL NAME</th>
     <th>INSURANCE AGENCY NAME</th>
     <th>EMAIL</th>
     <!-- <th>PASSWORD</th> -->
     <th>CREATED DATETIME</th>
+    <th>SESSION ID</th>
   </tr>
 </thead>
 <tbody>
@@ -34,6 +39,7 @@ include "vertical_nav.php";
       <td><?php echo $fetch_records['company_email'];?></td>
      <!--  <td><php echo $fetch_records['company_password'];?></td> -->
       <td><?php echo $fetch_records['company_created'];?></td>
+      <td><?php $session=session_id();echo ".$session;"?></td>
     </tr>
     <?php  }?>
     

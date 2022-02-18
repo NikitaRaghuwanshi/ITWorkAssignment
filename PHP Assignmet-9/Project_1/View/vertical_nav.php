@@ -10,20 +10,17 @@
 <html lang="en">
   <head>
     <title>Home</title>
-    <!-- <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyUu9-_IwfdI7XhrzeAcucshveYsyDjKDiQ&usqp=CAU"> -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <?php include "../Bootstrap/bootstrap.php";?>
     <style>
       .sidenav{
-        height: 125vh;
-        background-color: rgba(0,0,0,0.1);
-        font-size: 15px;
+        height: 120vh;
+        background-color: rgba(0,0,0,0.4);
+        font-size: 16px;
       }
+      .nav-text{
+        color: #000;
+      }
+      
     </style>
   </head>
   <body>
@@ -41,7 +38,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             
-        <li><a href="statics.php"><i class='bx bx-home-alt icon'></i>
+        <li><a href="home.php"><i class='bx bx-home-alt icon'></i>
          <span class="text nav-text">Home</span></a></li>
        
        <li><a href="user.php"><i class='bx bx-group icon' ></i>
@@ -49,9 +46,6 @@
        
        <li><a href="my_account.php"><i class='bx bx-group icon'></i>
          <span class="text nav-text">My Account</span></a></li>
-
-         <li><a href="insert_record.php"><i class='bx bx-group icon'></i>
-         <span class="text nav-text">Insert Record</span></a></li> 
 
          <li><a href="user_details.php"><i class='bx bx-group icon'></i>
          <span class="text nav-text">User Details Record</span></a></li>  
@@ -68,9 +62,9 @@
      <div class="row content">
      <div class="col-sm-3 sidenav hidden-xs">
        <h2>&nbsp;Visual Studio<img src="img/vs1.png" width="20%"></h2><br>
-       <ul class="nav nav-pills nav-stacked">
+       <ul class="nav nav-pills nav-stacked red ">
       
-       <li><a href="statics.php"><i class='bx bx-home-alt icon'></i>
+       <li><a href="home.php"><i class='bx bx-home-alt icon'></i>
          <span class="text nav-text">Home</span></a></li>
        
        <li><a href="user.php"><i class='bx bx-group icon' ></i>
@@ -78,9 +72,6 @@
        
        <li><a href="my_account.php"><i class='bx bx-group icon'></i>
          <span class="text nav-text">My Account</span></a></li>
-
-        <li><a href="insert_record.php"><i class='bx bx-group icon'></i>
-         <span class="text nav-text">Insert Record</span></a></li> 
 
           <li><a href="user_details.php"><i class='bx bx-group icon'></i>
          <span class="text nav-text">User Details Record</span></a></li> 
@@ -103,5 +94,5 @@
    </div>
  </div>
   </div>
-<!-- </body>
-</html> -->
+</body>
+</html>
