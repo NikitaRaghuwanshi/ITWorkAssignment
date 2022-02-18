@@ -1,4 +1,5 @@
  <?php
+  
   include "../Model/db_connection.php";
   $query="SELECT * FROM company where company_id = ".$_GET['id'];
   $result=$con->query($query);
@@ -9,7 +10,7 @@
        $company_email=$data['company_email']; 
        $company_password=$data['company_password'];
        $company_created=$data['company_created'];
-       $company_status=$data['company_status'];
+       // $company_status=$data['company_status'];
     }
   }
 ?>
@@ -81,41 +82,39 @@
         <input type="date" class="form-control" id="created_date" name="company_created" value="<?php echo $created_date ?>">
       </div>
     </div>
-    <div class="col-lg-6">  
-      <div class="form-group">
-        <label for="status">Status</label>
-        <input type="text" class="form-control" id="status" placeholder="Status" name="company_status" value="<?php echo $company_status ?>">
-      </div>
-    </div>  
-<!-- 
-    <div class="col-lg-6">  
-      <div class="form-group">
+
+    <div class="col-lg-6">
+    <div class="form-group">
         <label for="user_city">User City</label>
-        <input type="text" class="form-control" id="user_city" placeholder="User City" name="user_city" required="">
-      </div>
+        <input type="text" class="form-control" id="user_city" name="user_city" value="<?php echo $user_city ?>">
+      </div>  
+    </div>
     </div>  
 
-    <div class="col-lg-6">  
+    <div class="row">
+    <div class="col-lg-6">
       <div class="form-group">
         <label for="user_state">User State</label>
-        <input type="text" class="form-control" id="user_state" placeholder="User State" name="user_state">
+        <input type="date" class="form-control" id="user_state" name="user_state" value="<?php echo $user_state ?>">
       </div>
-    </div>  
+    </div>
 
-    <div class="col-lg-6">  
-      <div class="form-group">
+    <div class="col-lg-6">
+    <div class="form-group">
         <label for="user_address">User Address</label>
-        <input type="text" class="form-control" id="user_address" placeholder="User Address" name="user_address">
-      </div>
+        <input type="date" class="form-control" id="user_address" name="user_address" value="<?php echo $user_address ?>">
+      </div>  
+    </div>
     </div>  
 
-    <div class="col-lg-6">  
+    <div class="row">
+    <div class="col-lg-6">
       <div class="form-group">
         <label for="user_pincode">User Pincode</label>
-        <input type="number" class="form-control" id="user_pincode" placeholder="User Pincode" name="user_pincode">
+        <input type="date" class="form-control" id="user_pincode" name="user_pincode" value="<?php echo $user_pincode ?>">
       </div>
-    </div>  
- -->
+    </div>
+
 
       <div class="form-group form-check">&nbsp;&nbsp;&nbsp;
         <label class="form-check-label">

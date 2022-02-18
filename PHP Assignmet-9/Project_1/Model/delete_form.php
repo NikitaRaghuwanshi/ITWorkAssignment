@@ -6,10 +6,12 @@
 	$query="DELETE FROM company where company_id = ".$id;
 
 	if($con->query($query)){
-		echo "<script>alert('Record Delete Successfully..')</script>";
+		$_SESSION['message'] = "Record Delete!!!";
+	  	 	header("Location: ../View/user.php");
 		// header('location:user.php');
 	}
 	else{
-		echo "<script>alert('Record Failed..')</script>";
+		$_SESSION['message'] = "Failed!!!";
+	  	 	header("Location: ../View/user.php");
 	}
 ?>
